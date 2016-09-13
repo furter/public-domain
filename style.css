@@ -17,7 +17,7 @@ div {
 }
 body {
     font-family: sans-serif;
-    max-width: 800px;
+    max-width: 640px;
     margin: auto;
     margin-top: 10%;
 }
@@ -32,8 +32,9 @@ h6 {
 }
 
 a, a:visited, a:active {
-    color: blue;
+    color: black;
     text-decoration: none;
+    border-bottom: 2px solid black;
 }
 
 a:hover {
@@ -41,7 +42,7 @@ a:hover {
 }
 
 blockquote {
-    border-left: 4px solid #8383ff;
+    border-left: 4px solid black;
     margin-left: 0;
     padding-left: 40px;
 }
