@@ -1,0 +1,28 @@
+/* ---------- FONTS ----------- */
+
+@font-face {
+    font-family: 'Reglo';
+    src: url('fonts/reglo-bold-webfont.eot');
+    src: url('fonts/reglo-bold-webfont.woff') format('woff'),
+         url('fonts/reglo-bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* FIX THE BROWSERS’ DEFAULT SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+}
+div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ body {
+     font-family: Reglo;
+     max-width: 800px;
+     margin: auto;
+     margin-top: 10%;
+ }
