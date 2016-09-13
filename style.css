@@ -30,6 +30,9 @@ h5,
 h6 {
     font-family: Reglo;
 }
+h2 {
+    margin-top: 40px;
+}
 
 a, a:visited, a:active {
     color: black;
