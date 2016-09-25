@@ -40,28 +40,49 @@
     <!-- JS -->
 </head>
 <body>
-
+<div class="intro">
     <h1>Design the<br/>Public Domain</h1>
+    <h2>Workshop<br />Loraine Furter &amp;<br />Eric Schrijver<br />MICA Baltimore, 2016</h2>
+</div>
 
+<div class="slide">
+    <h3 class="caption">This is the mythology of the author</h3>
     <img src="images/author.gif" alt="" style="">
+</div>
+
+<div class="slide">
+    <h3 class="caption">Artistic creations live in splendid isolation</h3>
     <img src="images/author-8.png" alt="" style="">
-    <h2>VS</h2>
+</div>
+
+<div class="slide">
+    <h3 class="caption">But does it work that way?</h3>
     <img src="images/island.gif" alt="" style="">
+</div>
 
-
+<div class="slide">
+    <h3 class="caption">The law separates ideas from form</h3>
     <img src="images/ideas-forms.gif" alt="" style="">
+</div>
+
+<div class="slide">
+    <h3 class="caption">But ideas don’t exist separate of forms</h3>
     <img src="images/ideas-forms-4.png" alt="" style="">
+</div>
 
+<div class="slide">
+    <h3 class="caption">Short text on the author’s death</h3>
+    <img src="images/legal-life-cycle-6.png" width="800" height="450" alt="Legal Life Cycle 6">
+</div>
 
-<h2>Workshop<br />Loraine Furter &amp;<br />Eric Schrijver<br />MICA Baltimore, 2016</h2>
+<div class="slide">
+    <h3 class="caption">This morning in Baltimore, we got to explore the richness of the public domain:</h3>
+    <img src="images/workshop-process.png" alt="" style="margin: 70px 0">
+</div>
 
-<img src="images/workshop-process.png" alt="" style="margin: 70px 0">
+<h3 class="caption"></h3>
 
-
-
-
-
-<h2>Groups</h2>
+<h2>With 5 Groups for 5 sources</h2>
 <h3>1. <a target="_blank" href="https://archive.org/details/BaltimoreTypeCCCatalog1929">A Catalogue of Type : Baltimore Type and Composition</a></h3>
 
 <h3>2. <a target="_blank" href="http://www.metmuseum.org/art/collection">The Metropolitan Museum of Art</a></h3>
@@ -72,7 +93,7 @@
 
 <h3>5. <a target="_blank" href="https://www.loc.gov/collections/carol-m-highsmith/about-this-collection/">Highsmith (Carol M.) Archive</a></h3>
 
-<h2>Catalogues</h2>
+<h2>We made 5 Catalogues</h2>
 
 <div class="img-smaller">
 <img src="images/works/catalogue_baltimoretype.png" alt="" style="">
@@ -82,7 +103,7 @@
 <img src="images/works/catalogue_WPA.png" alt="" style="">
 </div>
 
-<h2>Remixes</h2>
+<h2>And 12 Remixes</h2>
 
 <div class="img-smaller">
 <img src="images/works/Ju-1.jpg" alt="" style="">
@@ -99,9 +120,28 @@
 <img src="images/works/twoAmerica_Annie Kao-2.jpg" alt="" style="">
 </div>
 
+<h2>Participants</h2>
+
+AURORA COLON<br/>
+JEFF GLENDENNING<br/>
+JENNY JUNG<br/>
+WAN TING KAO<br/>
+LINDSEY KELLOGG<br/>
+JU KIM<br/>
+SABRINA LI<br/>
+KARIYMA MURPHY<br/>
+SPENCE NELSON<br/>
+MACKENZIE SCHROEDER<br/>
+HAYLEY THORNTON-KENNEDY<br/>
+GABRIELA TRUJILLO<br/>
+KIMMY TSAI<br/>
+SARAH WOOL<br/>
+ASHLEY WU<br/>
+
+
 <h2>Sources</h2>
 
-<p>The following section lists sources of Public Domain images: a sampling that represents different attitudes towards copyright and the public domain.</p>
+<p>The participants chose from the following list of sources of Public Domain images: a sampling that represents different attitudes towards copyright and the public domain.</p>
 
 <h3><a target="_blank" href="https://archive.org/details/BaltimoreTypeCCCatalog1929">A Catalogue of Type : Baltimore Type and Composition</a></h3>
 
@@ -165,5 +205,42 @@
 
 <!--<p>One of the fundamental concepts underlying copyright is the author. Woodmansee thoroughly dissects the modern notion of the author and explains how it has come about historically.</p>-->
 
+<script src="jquery-1.12.4.js"></script>
+<script>
+var $h1 = $("h1");
+var urHTML = $("h1").html();
 
+$("h3.caption").css("visibility", "hidden");
+
+var getScrollTargets = function() {
+  return $("h3.caption").map(function(i, el) {
+    return {
+      html: $(el).html(),
+      top: $(el).offset().top
+    }
+  }).toArray();
+};
+
+console.log(getScrollTargets());
+$(window).scroll(function(){
+  var pos = $(window).scrollTop() + $(window).height();  
+  var scrollTargets  = getScrollTargets();
+
+  for (var i = 0; i < scrollTargets.length; i++) {
+    s = scrollTargets[i];
+    if (s.top > pos) {
+      if (i > 0) {
+        var sourceS = scrollTargets[i-1];
+        $h1.html(sourceS.html);
+      } else {
+        $h1.html(urHTML);
+      }
+      break;
+    } else {
+      $h1.html("");
+    };
+  }
+});
+  
+</script>
 </body>
