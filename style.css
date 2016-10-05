@@ -82,7 +82,7 @@ blockquote {
     padding-left: 40px;
 }
 .img-smaller img {
-    max-width: 350px;
+    max-height: 455px;
     float: left;
     margin-left: 24px;
     margin-right: 24px;
